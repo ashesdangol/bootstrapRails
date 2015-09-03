@@ -1,0 +1,33 @@
+<ul class="nav nav-pills" role="tablist">
+  <li class="active"><%= link_to 'View list', todos_path %></li>
+  <li><%= link_to 'New todo', new_todo_path %></li>
+</ul>
+
+<h2> Listing Todos</h2>
+<table class="table-responsive table-hover table-condensed table-bordered">
+	
+	<tr>
+		<th>Title</th>
+		<th>Notes</th>
+
+	</tr>
+	<%@todos.each do |t|%>
+	<tr >
+		<td><%= t.title%></td>
+		<td><%=t.notes%></td>
+		<td><%=link_to 'Show', todo_path(t), class: 'btn btn-success'%></td>
+		<td><%=link_to 'Edit', edit_todo_path(t), class: 'btn btn-warning'%></td>
+		<td><%=link_to 'Delete', todo_path(t), method: :delete, data: {confirm: "are you sure you want to delete?"}, class: 'btn btn-danger'%></td>
+	</tr>	
+	<%end%>
+</table>
+
+<%=link_to new_todo_path, class: 'btn btn-success' do%>
+	<i class="glyphicon glyphicon-plus"></i> Create To Do
+<% end %>
+<br />
+<br />
+<%=link_to login_path, class: 'btn btn-success' do%>
+	<i class="glyphicon glyphicon-user"></i> Log In
+<% end %>
+

@@ -1,0 +1,7 @@
+<%= form_for(@todo) do |t|%>
+<h1>Title</h1>
+<%=t.text_field :title%>
+<h1>Notes</h1>
+<%=t.text_field :notes, :size => 150%>
+<%=t.submit "Update"%>
+<%end%>

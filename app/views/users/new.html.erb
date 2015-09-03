@@ -1,0 +1,9 @@
+<%= form_for(@user, html: {class: 'form-horizontal'}) do |f|%>
+  <% if @user.error.any?%>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this todo from being saved: </h2>
+    </div>
+
+
+<%end%>
+<%end%>

@@ -1,0 +1,8 @@
+<br />
+<br />
+<br />
+<%=form_for(@todo) do |f|%>
+ <%=f.text_field :title, placeholder: "Enter title", error: 'Title is mandatory, please specify one', :size => 51 %><br /><br />
+ <%=f.text_area :notes, placeholder: "Specify what you need to do",:size => '49x10'%><br />
+  <%= f.button :submit %>
+<%end%>
